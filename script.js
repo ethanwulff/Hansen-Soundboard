@@ -3,7 +3,7 @@ var excited = new Audio("Excited.wav");
 
 var fifteen = new Audio("15couldgetme20.wav");
 
-var miss = new Audio("Miss_vag.wav");
+var miss = new Audio("Miss_Vag.wav");
 
 var blank = new Audio("blank_the_cat.wav");
 
