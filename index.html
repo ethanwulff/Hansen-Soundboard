@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chris Hansen Soundboard</title>
+</head>
+
+
+<body>
+
+    <h1>Push the buttons to hear the voice of our lord and savior.</h1>
+
+    <button id=excButton>Excited</button>
+
+
+</body>
+
+</head>
+
+</html>
+
+<script>
+
+    var excited = new Audio("Excited.wav")
+    document.getElementById("excButton").addEventListener("click", playaudio);
+
+    function playaudio() {
+        excited.play();
+    }
+
+</script>
