@@ -7,6 +7,8 @@ var miss = new Audio("Miss_Vag.wav");
 
 var blank = new Audio("blank_the_cat.wav");
 
+var bleep = new Audio("idloveto.wav")
+
 document.getElementById("excbtn").addEventListener("click", function () {
     excited.play();
 });
@@ -21,4 +23,8 @@ document.getElementById("missbtn").addEventListener("click", function () {
 
 document.getElementById("blankbtn").addEventListener("click", function () {
     blank.play();
+});
+
+document.getElementById("bleepbtn").addEventListener("click", function () {
+    bleep.play();
 });
