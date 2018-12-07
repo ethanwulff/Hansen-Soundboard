@@ -1,30 +1,27 @@
-// Sounds
-var excited = new Audio("Excited.wav");
+// Get JSON data
+$.getJSON("sounds.json", function (data) {
+    // Loop through each JSON object
+    $.each(data, function (index, item) {
+        // Create button
+        let button = $("<button></button>");
 
-var fifteen = new Audio("15couldgetme20.wav");
+        // Add name of audio clip to button
+        button.text(item.name);
 
-var miss = new Audio("Miss_Vag.wav");
+        // Add the path to the audio to the button
+        button.attr("data-path", item.path);
 
-var blank = new Audio("blank_the_cat.wav");
+        // Add event listener to button
+        button.on("click", function () {
+            playSound(this.getAttribute("data-path"));
+        });
 
-var bleep = new Audio("idloveto.wav")
-
-document.getElementById("excbtn").addEventListener("click", function () {
-    excited.play();
+        // Append button
+        $("#buttons").append(button);
+    });
 });
 
-document.getElementById("15btn").addEventListener("click", function () {
-    fifteen.play();
-});
-
-document.getElementById("missbtn").addEventListener("click", function () {
-    miss.play();
-});
-
-document.getElementById("blankbtn").addEventListener("click", function () {
-    blank.play();
-});
-
-document.getElementById("bleepbtn").addEventListener("click", function () {
-    bleep.play();
-});
+function playSound(path) {
+    let audio = new Audio(path);
+    audio.play();
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "excited",
+        "path": "sounds/Excited.wav"
+    },
+    {
+        "name": "fifteen",
+        "path": "sounds/15couldgetme20.wav"
+    },
+    {
+        "name": "miss",
+        "path": "sounds/Miss_Vag.wav"
+    },
+    {
+        "name": "blank",
+        "path": "sounds/blank_the_cat.wav"
+    },
+    {
+        "name": "bleep",
+        "path": "sounds/idloveto.wav"
+    }
+]
