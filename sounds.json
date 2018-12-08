@@ -18,5 +18,29 @@
     {
         "name": "bleep",
         "path": "sounds/idloveto.wav"
+    },
+    {
+        "name": "cookie",
+        "path": "sounds/cookie.mp3"
+    },
+    {
+        "name": "coolwhip",
+        "path": "sounds/coolwhip.mp3"
+    },
+    {
+        "name": "boy",
+        "path": "sounds/pervayoungboy.mp3"
+    },
+    {
+        "name": "pretty",
+        "path": "sounds/pervy.mp3"
+    },
+    {
+        "name": "thang",
+        "path": "sounds/thang.mp3"
+    },
+    {
+        "name": "say",
+        "path": "sounds/yousay.mp3"
     }
 ]
