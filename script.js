@@ -4,6 +4,10 @@ $("#playAll").on("click", playAll);
 $.getJSON("sounds.json", function (data) {
     // Loop through each JSON object
     $.each(data, function (index, item) {
+        let div = $("<div></div>").addClass("button-div");
+        let button_repeat = $("<button></button>").text("repeat");
+        button_repeat.addClass("repeat");
+
         // Create button
         let button = $("<button></button>");
 
@@ -13,21 +17,39 @@ $.getJSON("sounds.json", function (data) {
         button.addClass("sound");
 
         // Add the path to the audio to the button
-        button.attr("data-path", item.path);
+        div.attr("data-path", item.path);
 
         // Add event listener to button
         button.on("click", function () {
-            playSound(this.getAttribute("data-path"));
+            playSound(this.parentElement.getAttribute("data-path"));
+        });
+
+        button_repeat.on("click", function () {
+            repeatSound(this.parentElement.getAttribute("data-path"));
         });
 
         // Append button
-        $("#buttons").append(button);
+        div.append(button);
+        div.append(button_repeat);
+        $("#buttons").append(div);
     });
 });
 
 function playSound(path) {
     let audio = new Audio(path);
     audio.play();
+}
+
+function repeatSound(path) {
+    let audio = new Audio(path);
+    
+    audio.addEventListener('loadedmetadata', function() {
+        audio.play();
+        setInterval(function() {
+            audio.play();
+        }, (audio.duration * 1000)/2)
+        
+    });
 }
 
 function playAll() {
