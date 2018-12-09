@@ -55,6 +55,6 @@ function repeatSound(path) {
 function playAll() {
     let soundList = document.getElementsByClassName("sound");
     for (let i in soundList) {
-        playSound(soundList[i].getAttribute("data-path"));
+        playSound(soundList[i].parentElement.getAttribute("data-path"));
     }
 }

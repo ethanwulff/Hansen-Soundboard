@@ -5,11 +5,20 @@ body {
 button {
     border-radius: 10px;
     border: 1px solid grey;
-    width: 4%;
-    margin-left: 1%;
     height: 20px;
+
 }
 
 button:hover {
     border: 1px solid black;
+}
+
+.button-div {
+    display: inline-block;
+    width: 5%;
+    margin-left: 1%;
+    text-align: center;
+    background-color: grey;
+    padding: 5px;
+    border-radius: 10px;
 }
