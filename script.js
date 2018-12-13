@@ -1,4 +1,7 @@
+let intervalList = [];
+
 $("#playAll").on("click", playAll);
+$("#stop").on("click", endRepeat);
 
 // Get JSON data
 $.getJSON("sounds.json", function (data) {
@@ -42,13 +45,13 @@ function playSound(path) {
 
 function repeatSound(path) {
     let audio = new Audio(path);
-    
-    audio.addEventListener('loadedmetadata', function() {
+
+    audio.addEventListener('loadedmetadata', function () {
         audio.play();
-        setInterval(function() {
+        intervalList.push(setInterval(function () {
             audio.play();
-        }, (audio.duration * 1000)/2)
-        
+        }, (audio.duration * 1000) / 2)
+        );
     });
 }
 
@@ -57,4 +60,9 @@ function playAll() {
     for (let i in soundList) {
         playSound(soundList[i].parentElement.getAttribute("data-path"));
     }
+}
+
+function endRepeat() {
+    for (let i in intervalList)
+        clearInterval(intervalList[i]);
 }
